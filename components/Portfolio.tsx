@@ -7,7 +7,7 @@ import { Mail, Phone, Linkedin, MapPin, Calendar, Building, Github, ExternalLink
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-gray-900 dark:bg-gray-900">
+    <div className="min-h-screen bg-gray-900 dark:bg-gray-900" data-testid="portfolio-content">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         {/* Header Section */}
         <Card className="mb-8 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
@@ -84,7 +84,7 @@ export default function Portfolio() {
         </Card>
 
         {/* Skills Section */}
-        <Card className="mb-8 bg-green-50 dark:bg-slate-800 border-l-4 border-green-500">
+        <Card className="mb-8 bg-green-50 dark:bg-slate-800 border-l-4 border-green-500" data-section="skills">
           <CardHeader>
             <CardTitle className="text-2xl text-green-600 dark:text-green-400">Technical Skills</CardTitle>
           </CardHeader>
@@ -141,7 +141,7 @@ export default function Portfolio() {
         </Card>
 
         {/* Experience Section */}
-        <Card className="mb-8 bg-orange-50 dark:bg-slate-800 border-l-4 border-orange-500">
+        <Card className="mb-8 bg-orange-50 dark:bg-slate-800 border-l-4 border-orange-500" data-section="experience">
           <CardHeader>
             <CardTitle className="text-2xl text-orange-600 dark:text-orange-400">Professional Experience</CardTitle>
           </CardHeader>
@@ -280,7 +280,7 @@ export default function Portfolio() {
         </Card>
 
         {/* Education Section */}
-        <Card className="mb-8 bg-purple-50 dark:bg-slate-800 border-l-4 border-purple-500">
+        <Card className="mb-8 bg-purple-50 dark:bg-slate-800 border-l-4 border-purple-500" data-section="education">
           <CardHeader>
             <CardTitle className="text-2xl text-purple-600 dark:text-purple-400">Education & Training</CardTitle>
           </CardHeader>
