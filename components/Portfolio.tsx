@@ -3,14 +3,14 @@ import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import { Mail, Phone, Linkedin, MapPin, Calendar, Building } from "lucide-react"
+import { Mail, Phone, Linkedin, MapPin, Calendar, Building, Github, ExternalLink } from "lucide-react"
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-gray-900 dark:bg-gray-900">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         {/* Header Section */}
-        <Card className="mb-8">
+        <Card className="mb-8 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
           <CardContent className="pt-6">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
               <Avatar className="w-32 h-32">
@@ -19,10 +19,10 @@ export default function Portfolio() {
                 </AvatarFallback>
               </Avatar>
               <div className="flex-1 text-center md:text-left">
-                <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent mb-2">
                   Shammi Parussella
                 </h1>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-4">
+                <p className="text-xl text-gray-300 dark:text-gray-300 mb-4">
                   Software Engineer & .NET Consultant
                 </p>
                 <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-gray-600 dark:text-gray-400">
@@ -39,7 +39,7 @@ export default function Portfolio() {
                     shammirasadika123@gmail.com
                   </div>
                 </div>
-                <div className="flex justify-center md:justify-start mt-4">
+                <div className="flex justify-center md:justify-start gap-3 mt-4">
                   <Button asChild variant="outline">
                     <a 
                       href="https://www.linkedin.com/in/shammiparussella-301603197" 
@@ -48,7 +48,18 @@ export default function Portfolio() {
                       className="flex items-center gap-2"
                     >
                       <Linkedin className="w-4 h-4" />
-                      LinkedIn Profile
+                      LinkedIn
+                    </a>
+                  </Button>
+                  <Button asChild variant="outline">
+                    <a 
+                      href="https://github.com/shammirasadika" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
+                    >
+                      <Github className="w-4 h-4" />
+                      GitHub
                     </a>
                   </Button>
                 </div>
@@ -58,9 +69,9 @@ export default function Portfolio() {
         </Card>
 
         {/* Summary Section */}
-        <Card className="mb-8">
+        <Card className="mb-8 bg-blue-50 dark:bg-slate-800 border-l-4 border-blue-500">
           <CardHeader>
-            <CardTitle className="text-2xl">Professional Summary</CardTitle>
+            <CardTitle className="text-2xl text-blue-600 dark:text-blue-400">Professional Summary</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -73,9 +84,9 @@ export default function Portfolio() {
         </Card>
 
         {/* Skills Section */}
-        <Card className="mb-8">
+        <Card className="mb-8 bg-green-50 dark:bg-slate-800 border-l-4 border-green-500">
           <CardHeader>
-            <CardTitle className="text-2xl">Technical Skills</CardTitle>
+            <CardTitle className="text-2xl text-green-600 dark:text-green-400">Technical Skills</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -130,15 +141,15 @@ export default function Portfolio() {
         </Card>
 
         {/* Experience Section */}
-        <Card className="mb-8">
+        <Card className="mb-8 bg-orange-50 dark:bg-slate-800 border-l-4 border-orange-500">
           <CardHeader>
-            <CardTitle className="text-2xl">Professional Experience</CardTitle>
+            <CardTitle className="text-2xl text-orange-600 dark:text-orange-400">Professional Experience</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             {/* Experience 1 */}
-            <div className="border-l-4 border-blue-500 pl-6">
+            <div className="border-l-4 border-blue-500 pl-6 transform transition-all duration-700 hover:translate-x-2 animate-slide-in-left">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
                   Technical Consultant/Software Engineer
                 </h3>
                 <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
@@ -146,9 +157,14 @@ export default function Portfolio() {
                   May 2023 - April 2024
                 </div>
               </div>
-              <div className="flex items-center gap-1 mb-3 text-gray-600 dark:text-gray-400">
-                <Building className="w-4 h-4" />
-                CONIFS Global (Pvt) Ltd
+              <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
+                  <Building className="w-4 h-4" />
+                  CONIFS Global (Pvt) Ltd
+                </div>
+                <a href="https://conifs.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-300">
+                  <ExternalLink className="w-4 h-4" />
+                </a>
               </div>
               <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300 mb-3">
                 <li>Design, build, and upkeep the structure of databases, including tables, relationships, and data types</li>
@@ -171,9 +187,9 @@ export default function Portfolio() {
             <Separator />
 
             {/* Experience 2 */}
-            <div className="border-l-4 border-green-500 pl-6">
+            <div className="border-l-4 border-green-500 pl-6 transform transition-all duration-700 hover:translate-x-2 animate-slide-in-left animation-delay-200">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                <h3 className="text-xl font-semibold text-green-600 dark:text-green-400">
                   Software Engineer
                 </h3>
                 <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
@@ -181,9 +197,14 @@ export default function Portfolio() {
                   April 2022 - May 2023
                 </div>
               </div>
-              <div className="flex items-center gap-1 mb-3 text-gray-600 dark:text-gray-400">
-                <Building className="w-4 h-4" />
-                Acentura (Pvt) Ltd
+              <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
+                  <Building className="w-4 h-4" />
+                  Acentura (Pvt) Ltd
+                </div>
+                <a href="https://acentura.com" target="_blank" rel="noopener noreferrer" className="text-green-500 hover:text-green-700 dark:hover:text-green-300">
+                  <ExternalLink className="w-4 h-4" />
+                </a>
               </div>
               <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
                 <li>Works with a team to improve existing software or design new applications</li>
@@ -195,9 +216,9 @@ export default function Portfolio() {
             <Separator />
 
             {/* Experience 3 */}
-            <div className="border-l-4 border-purple-500 pl-6">
+            <div className="border-l-4 border-purple-500 pl-6 transform transition-all duration-700 hover:translate-x-2 animate-slide-in-left animation-delay-400">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                <h3 className="text-xl font-semibold text-purple-600 dark:text-purple-400">
                   Associate Software Engineer
                 </h3>
                 <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
@@ -205,9 +226,14 @@ export default function Portfolio() {
                   February 2021 - April 2022
                 </div>
               </div>
-              <div className="flex items-center gap-1 mb-3 text-gray-600 dark:text-gray-400">
-                <Building className="w-4 h-4" />
-                DMS Software Engineering (Pvt) Ltd
+              <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
+                  <Building className="w-4 h-4" />
+                  DMS Software Engineering (Pvt) Ltd
+                </div>
+                <a href="https://dms.lk" target="_blank" rel="noopener noreferrer" className="text-purple-500 hover:text-purple-700 dark:hover:text-purple-300">
+                  <ExternalLink className="w-4 h-4" />
+                </a>
               </div>
               <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300 mb-3">
                 <li>Developed a new software product from the ground up</li>
@@ -226,9 +252,9 @@ export default function Portfolio() {
             <Separator />
 
             {/* Experience 4 */}
-            <div className="border-l-4 border-orange-500 pl-6">
+            <div className="border-l-4 border-orange-500 pl-6 transform transition-all duration-700 hover:translate-x-2 animate-slide-in-left animation-delay-600">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                <h3 className="text-xl font-semibold text-orange-600 dark:text-orange-400">
                   Trainee Software Engineer
                 </h3>
                 <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
@@ -236,9 +262,14 @@ export default function Portfolio() {
                   December 2019 - February 2021
                 </div>
               </div>
-              <div className="flex items-center gap-1 mb-3 text-gray-600 dark:text-gray-400">
-                <Building className="w-4 h-4" />
-                Flexiv Micro System (Pvt) Ltd
+              <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
+                  <Building className="w-4 h-4" />
+                  Flexiv Micro System (Pvt) Ltd
+                </div>
+                <a href="https://flexiv.lk" target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:text-orange-700 dark:hover:text-orange-300">
+                  <ExternalLink className="w-4 h-4" />
+                </a>
               </div>
               <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
                 <li>Write the code for a portion of the program</li>
@@ -249,9 +280,9 @@ export default function Portfolio() {
         </Card>
 
         {/* Education Section */}
-        <Card className="mb-8">
+        <Card className="mb-8 bg-purple-50 dark:bg-slate-800 border-l-4 border-purple-500">
           <CardHeader>
-            <CardTitle className="text-2xl">Education & Training</CardTitle>
+            <CardTitle className="text-2xl text-purple-600 dark:text-purple-400">Education & Training</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="border-l-4 border-blue-600 pl-6">
@@ -288,9 +319,9 @@ export default function Portfolio() {
         </Card>
 
         {/* Languages Section */}
-        <Card>
+        <Card className="bg-cyan-50 dark:bg-slate-800 border-l-4 border-cyan-500">
           <CardHeader>
-            <CardTitle className="text-2xl">Languages</CardTitle>
+            <CardTitle className="text-2xl text-cyan-600 dark:text-cyan-400">Languages</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
